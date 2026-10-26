@@ -1,0 +1,367 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mundo da Banana 🍌</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fffbea;
+      color: #292817;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #ffdf35;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: #292817;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #7b5c00;
+    }
+
+    .hero {
+      min-height: 470px;
+      padding: 65px 8%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+      background: linear-gradient(135deg, #fffbea, #fff1a5);
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 260px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 6vw, 65px);
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #d89e00;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 480px;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 24px;
+      background: #292817;
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background: #675700;
+      transform: translateY(-2px);
+    }
+
+    .banana-art {
+      flex: 1;
+      min-width: 230px;
+      text-align: center;
+      font-size: clamp(120px, 22vw, 220px);
+      filter: drop-shadow(0 15px 10px #d9b93655);
+      animation: flutuar 3s ease-in-out infinite;
+    }
+
+    @keyframes flutuar {
+      0%, 100% { transform: translateY(0) rotate(-5deg); }
+      50% { transform: translateY(-12px) rotate(5deg); }
+    }
+
+    section {
+      padding: 70px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 34px;
+      margin-bottom: 12px;
+    }
+
+    .section-desc {
+      text-align: center;
+      color: #716d56;
+      margin-bottom: 35px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      padding: 28px 22px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 5px 20px #59480010;
+      border: 1px solid #f4e9b4;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .card .emoji {
+      font-size: 55px;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 21px;
+    }
+
+    .benefits {
+      background: #ffdf35;
+    }
+
+    .benefits .card {
+      background: #fff9d9;
+      border: none;
+    }
+
+    .curiosity {
+      background: #292817;
+      color: white;
+      text-align: center;
+    }
+
+    .curiosity p {
+      max-width: 700px;
+      margin: 15px auto 25px;
+      color: #f5edc5;
+      font-size: 18px;
+    }
+
+    .fact {
+      font-size: 65px;
+    }
+
+    .recipe {
+      background: #fffbea;
+    }
+
+    .recipe-box {
+      max-width: 750px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      border: 1px solid #f4e9b4;
+    }
+
+    .recipe-box h3 {
+      margin: 15px 0 8px;
+    }
+
+    .recipe-box ul,
+    .recipe-box ol {
+      padding-left: 24px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #ffdf35;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        justify-content: center;
+        text-align: center;
+      }
+
+      nav a {
+        margin: 0 7px;
+        font-size: 14px;
+      }
+
+      .hero {
+        text-align: center;
+      }
+
+      .hero p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      section {
+        padding: 50px 6%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">🍌 Mundo da Banana</div>
+    <nav>
+      <a href="#tipos">Tipos</a>
+      <a href="#beneficios">Benefícios</a>
+      <a href="#curiosidades">Curiosidades</a>
+      <a href="#receita">Receita</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <h1>O mundo é mais <span>amarelo!</span> 🍌</h1>
+        <p>
+          Descubra tudo sobre uma das frutas mais queridas do Brasil:
+          seus tipos, benefícios, curiosidades e receitas deliciosas.
+        </p>
+        <a href="#tipos" class="btn">Explorar o mundo da banana →</a>
+      </div>
+
+      <div class="banana-art" aria-label="Banana">🍌</div>
+    </section>
+
+    <section id="tipos">
+      <h2 class="section-title">Conheça os tipos</h2>
+      <p class="section-desc">Cada banana tem seu charme e seu sabor!</p>
+
+      <div class="cards">
+        <article class="card">
+          <div class="emoji">🍌</div>
+          <h3>Banana-prata</h3>
+          <p>Uma das favoritas dos brasileiros. Tem polpa firme e é ótima para comer no dia a dia.</p>
+        </article>
+
+        <article class="card">
+          <div class="emoji">🍌</div>
+          <h3>Banana-nanica</h3>
+          <p>Doce, macia e perfeita para vitaminas, sobremesas e lanches rápidos.</p>
+        </article>
+
+        <article class="card">
+          <div class="emoji">🍌</div>
+          <h3>Banana-maçã</h3>
+          <p>Pequena, delicada e conhecida por seu aroma e sabor característicos.</p>
+        </article>
+
+        <article class="card">
+          <div class="emoji">🍌</div>
+          <h3>Banana-da-terra</h3>
+          <p>Maior e muito usada em receitas cozidas, fritas ou assadas.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="benefits" id="beneficios">
+      <h2 class="section-title">Por que comer banana?</h2>
+      <p class="section-desc">Uma fruta prática para incluir na alimentação.</p>
+
+      <div class="cards">
+        <article class="card">
+          <div class="emoji">⚡</div>
+          <h3>Energia</h3>
+          <p>Seus carboidratos ajudam a fornecer energia para as atividades do dia.</p>
+        </article>
+
+        <article class="card">
+          <div class="emoji">💪</div>
+          <h3>Potássio</h3>
+          <p>Contém potássio, mineral importante para os músculos e o funcionamento do organismo.</p>
+        </article>
+
+        <article class="card">
+          <div class="emoji">🌿</div>
+          <h3>Fibras</h3>
+          <p>Fornece fibras que contribuem para o funcionamento do intestino.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="curiosity" id="curiosidades">
+      <div class="fact">🌎🍌</div>
+      <h2 class="section-title">Você sabia?</h2>
+      <p>
+        Do ponto de vista botânico, a banana é uma baga!
+        A bananeira também não é uma árvore de verdade:
+        ela é uma planta herbácea gigante.
+      </p>
+      <a href="#receita" class="btn">Quero uma receita!</a>
+    </section>
+
+    <section class="recipe" id="receita">
+      <h2 class="section-title">Receita fácil 🍌</h2>
+      <p class="section-desc">Aprenda a fazer uma vitamina de banana.</p>
+
+      <div class="recipe-box">
+        <div class="emoji" style="text-align:center;font-size:60px;">🥛</div>
+        <h3>Ingredientes</h3>
+        <ul>
+          <li>1 banana madura</li>
+          <li>250 ml de leite ou bebida vegetal</li>
+          <li>Canela a gosto (opcional)</li>
+          <li>Gelo a gosto (opcional)</li>
+        </ul>
+
+        <h3>Modo de preparo</h3>
+        <ol>
+          <li>Descasque e corte a banana.</li>
+          <li>Coloque todos os ingredientes no liquidificador.</li>
+          <li>Bata até ficar cremoso.</li>
+          <li>Sirva na hora e aproveite!</li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>🍌 Mundo da Banana — feito com carinho e potássio!</p>
+    <p>© 2026 | Um site para quem ama bananas.</p>
+  </footer>
+
+</body>
+</html>
